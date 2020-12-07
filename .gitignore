@@ -1,0 +1,12 @@
+.idea
+/*.txt
+.tox
+.coverage
+.pytest_cache
+password_checker.egg-info
+venv
+test/__pycache__/
+__pycache__/
+build/
+dist/
+pswd_validator.egg-info/

@@ -1,0 +1,7 @@
+include test/data/*.txt
+include requirements.txt
+include LICENSE
+include *.ini
+
+GpFNCmBrOzfWUGgjw9rQC96bUviUGa3wpXyuzZz9arv7axMstu86
+valeramaniuk
