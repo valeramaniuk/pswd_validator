@@ -54,6 +54,7 @@ Remote and local weak passwords files can be used on the same run.
 Activate your [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 ```sh
 git clone git@github.com:valeramaniuk/pswd_validator.git
+cd pswd_validator
 pip install -rrequirements.txt
 ```
 to run unit and integrations tests, the linter(flake8), and a code coverage check simply:
@@ -66,7 +67,8 @@ tox
     * MVP, with functionality and deployment tested on Win10 only
 * 0.0.2
     * README and help fixed and expanded
-    
+* 0.1.0
+    * requirements.txt added
 ## Meta
 
 Valera Maniuk –  valeramaniuk@protonmail.com

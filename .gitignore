@@ -1,5 +1,4 @@
 .idea
-/*.txt
 .tox
 .coverage
 .pytest_cache
