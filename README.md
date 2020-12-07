@@ -24,7 +24,7 @@ OS X & Linux:
 TBD
 
 ## Usage example
-![usage example](https://github.com/valeramaniuk/pswd_validator/img/example.gif)
+![usage example](https://github.com/valeramaniuk/pswd_validator/blob/main/img/example.gif)
 
 
 For all available options
