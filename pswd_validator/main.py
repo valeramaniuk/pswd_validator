@@ -25,6 +25,7 @@ default_config = {
 class PasswordChecker:
     def __init__(self, common_passwords: set, config: dict):
         self.common_passwords = common_passwords
+        # TODO: think about some config management tool here
         self.min_length = config["min_length"]
         self.max_length = config["max_length"]
         self.nocheck_length = config["nocheck_length"]
@@ -32,6 +33,8 @@ class PasswordChecker:
         self.nocheck_character_set = config["nocheck_character_set"]
         self.valid_characters = VALID_CHARACTERS
 
+    # Returns the error messages for all failed check.
+    # For example too short and too common
     def check(self, password) -> List[str]:
         validation_errors = []
 
@@ -43,7 +46,6 @@ class PasswordChecker:
                 if ch not in self.valid_characters:
                     invalid_chars.add(ch)
             if invalid_chars:
-                print(invalid_chars)
                 validation_errors.append(error_msg.format(r",".join(list(invalid_chars))))
 
         def is_length_valid():
@@ -57,6 +59,7 @@ class PasswordChecker:
             if password in self.common_passwords:
                 validation_errors.append("is too common")
 
+        # TODO: rename to get rid of double negation
         if not self.nocheck_character_set:
             is_charset_valid()
         if not self.nocheck_length:
@@ -115,7 +118,8 @@ def get_common_passwords(filename, get_default_remote) -> set:
         try:
             get_remote_default_common_passwords()
         except ValueError:
-            logging.error("URL {} cannot be reached and common passwords file cannot be fetched. Aborting...")
+            logging.error("URL {} cannot be reached and common passwords file cannot be fetched. Aborting...".format(
+                DEFAULT_WEAK_PASS_FILE_URL))
             sys.exit(1)
 
     if filename:
@@ -124,7 +128,7 @@ def get_common_passwords(filename, get_default_remote) -> set:
                 for line in f.readlines():
                     common_passwords.add(line.rstrip('\n'))
         except FileNotFoundError as e:
-            logging.error("{}, current is. Aborting...".format(str(e)))
+            logging.error("{}. Aborting...".format(str(e)))
             sys.exit(1)
 
     return common_passwords

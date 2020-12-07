@@ -1,4 +1,5 @@
 #####Disclaimer: 
+
 This is just a lab to help me to brush up on some fundamentials.
 
 # Password Validator
@@ -7,7 +8,7 @@ Simple CLI tool to check the strength of the passwords against  Digital Identity
 Specifically a password MUST:
 - Have an 8 character minimum
 - AT LEAST 64 character maximum
-- Allow all ASCII characters and spaces (unicode optional) **unicode is disallowed in the current version**
+- Allow all ASCII characters and spaces (unicode optional) **In the current version only ASCII letters, digits and punctuation is allowed**
 - Not be a common password
 
 It can be supplied with the newline separated file containing known weak passwords or the tool can fetch ~1M
@@ -64,7 +65,8 @@ tox
 * 0.0.1
     * MVP, with functionality and deployment tested on Win10 only
 * 0.0.2
-    * README and help ifxed and expanded
+    * README and help fixed and expanded
+    
 ## Meta
 
 Valera Maniuk –  valeramaniuk@protonmail.com
@@ -72,6 +74,12 @@ Valera Maniuk –  valeramaniuk@protonmail.com
 Distributed under the MIT license. 
 
 [https://github.com/valeramaniuk/pswd_validator](https://github.com/valeramaniuk/pswd_validator)
+
+## Roadmap
+
+- [ ] Expand the character set, make it configurable
+- [ ] Save the weak passwords file after fetching
+- [ ] Allow check against multiple files of weak passwords
 
 ## Contributing
 
