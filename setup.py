@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name='pswd_validator',
-    version='0.1',
+    version='0.0.2',
     description="Checks the password for Digital Identity Guidelines compliance",
     long_description=README,
     long_description_content_type="text/markdown",

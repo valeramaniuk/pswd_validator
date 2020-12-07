@@ -71,10 +71,10 @@ class PasswordChecker:
 @click.option('-f', '--common-passwords-path', default=None, type=str,
               help="Path to the filename containing common passwords")
 @click.option('--nocheck-common_passwords', is_flag=True,
-              help="Checks the password against the set of the most common passwords")
+              help="Disables check of the password against the set of the most common passwords")
 @click.option('--nocheck-char-set', is_flag=True,
-              help="Checks the password to be comprised of ASCII characters only")
-@click.option('--nocheck-length', is_flag=True, help="Checks the length of the password")
+              help="Disables check of the character set for the password ")
+@click.option('--nocheck-length', is_flag=True, help="Disables check of the length of the password")
 @click.option(
     '--fetch-common-passwords',
     is_flag=True,

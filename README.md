@@ -1,6 +1,9 @@
+#####Disclaimer: 
+This is just a lab to help me to brush up on some fundamentials.
+
 # Password Validator
 
-Simple CLI tool to check the strength of the passwords against  Digital Identity Guidelines as in of June 2017
+Simple CLI tool to check the strength of the passwords against  Digital Identity Guidelines as of June 2017
 Specifically a password MUST:
 - Have an 8 character minimum
 - AT LEAST 64 character maximum
@@ -21,7 +24,7 @@ python -m pip install --extra-index-url https://test.pypi.org/simple/ pswd_valid
 
 OS X & Linux:
 
-TBD
+TBD (no machine available for testing atm)
 
 ## Usage example
 ![usage example](https://github.com/valeramaniuk/pswd_validator/blob/main/img/example.gif)
@@ -31,6 +34,20 @@ For all available options
 ```sh
 pswd_validator --help
 ```
+
+Windows: To pipe the newline separated file into the validator
+```sh
+type pass.txt | pswd_validator
+```
+To check against the file of known weak passwords
+```sh
+pswd_validator -f=/path/to/weakpasswords.txt
+```
+To fetch ~1M of weak passwords from the Internet and check against them. Currently it fetches the file on every run without saving it locally.
+```sh
+pswd_validator  --fetch-common-passwords
+```
+Remote and local weak passwords files can be used on the same run.
 
 ## Development setup
 Activate your [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
@@ -46,7 +63,8 @@ tox
 
 * 0.0.1
     * MVP, with functionality and deployment tested on Win10 only
-
+* 0.0.2
+    * README and help ifxed and expanded
 ## Meta
 
 Valera Maniuk –  valeramaniuk@protonmail.com
@@ -62,5 +80,6 @@ Distributed under the MIT license.
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
+6. Please keep code coverage at the level you found it with :)
 
 
